@@ -5,9 +5,4 @@ fun print_headers(response) {
 
 request("http://google.com", nil, nil, "GET", print_headers);
 
-// fun printer(data) {
-//     print data;
-// }
-
-// read("code.hoot", printer);
-// print "This will print first";
+print "This message will print before the headers!";
