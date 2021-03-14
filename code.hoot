@@ -1,7 +1,0 @@
-fun print_headers(response) {
-    print response.headers;
-}
-
-delay(print_headers, 500);
-
-print "This message will print before the headers!";
