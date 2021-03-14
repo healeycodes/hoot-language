@@ -16,6 +16,13 @@ Open the REPL with `python hoot.py`.
 
 <br>
 
+* [Example programs](#example-programs)
+* [Language reference](#language-reference)
+* [Standard library](#standard-library)
+* [Licence](#licence)
+
+<br>
+
 ## Example programs
 
 Printing the headers from a HTTP response.
