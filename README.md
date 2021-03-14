@@ -1,6 +1,6 @@
 # Hoot Lang
 
-A general-purpose interpreted scripting language with an event loop. It's dynamically typed, with classes, inheritance, and closures. It's an implementation and extension of the [Lox](https://github.com/munificent/craftinginterpreters) Programming language.
+Hoot is a general-purpose interpreted scripting language with an event loop. It's dynamically typed, with classes, inheritance, and closures. It's an implementation and extension of the [Lox](https://github.com/munificent/craftinginterpreters) Programming language.
 
 Hoot extends Lox by introducing an event loop for non-blocking I/O, more complex types (string, list, map), and a tiny standard library (web requests, file reading/writing, delay functions).
 
@@ -8,7 +8,7 @@ Why? I wrote it to learn more about interpreters! [Crafting Interpreters](https:
 
 <br>
 
-It uses (mostly-typed) Python 3.8 and no additional libraries.
+Hoot uses (mostly-typed) Python 3.8 and no additional libraries.
 
 Run the integration tests with `python test_hoot.py`. It should also pass `mypy .` with no issues.
 
