@@ -1,4 +1,4 @@
-# Hoot Lang
+# Hoot Lang 🦉
 
 Hoot is a general-purpose interpreted scripting language with an event loop. It's dynamically typed, with classes, inheritance, and closures. It's an implementation and extension of the [Lox](https://github.com/munificent/craftinginterpreters) Programming language.
 
