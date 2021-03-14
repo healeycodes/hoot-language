@@ -1,4 +1,4 @@
-// Read a file, print the length, write to it, then print the new length
+// Read a file, print the length, append to it, then print the new length
 
 fun show_length(text) {
     print "File length: " + string(text.length());

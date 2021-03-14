@@ -75,7 +75,7 @@ print bubble_sort(unordered_numbers);
 
 <br>
 
-Read a file, print the length, write to it, then print the new length.
+Read a file, print the length, append to it, then print the new length.
 
 ```
 fun show_length(text) {
