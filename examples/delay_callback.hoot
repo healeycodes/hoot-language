@@ -5,9 +5,9 @@ fun make_logger(time) {
     return logger;
 }
 
-delay(make_logger(0), 0); // 0ms delay
+delay(0, make_logger(0)); // 0ms delay
 
-print "This message prints first because each task 'Runs-to-completion' ala JavaScript";
+print "This message prints first because each task 'Runs-to-completion' a la JavaScript.";
 
-delay(make_logger(50), 50);
-delay(make_logger(100), 100);
+delay(50, make_logger(50));
+delay(100, make_logger(100));

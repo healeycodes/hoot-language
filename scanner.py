@@ -131,7 +131,8 @@ class Scanner:
             self.advance()
 
         if self.is_at_end():
-            self.hoot.error(self.line, 'Unterminated string.')
+            self.hoot.error(Token(TokenType.EOF, None, None,
+                                  self.line), 'Unterminated string.')
             return
 
         # the closing '"'

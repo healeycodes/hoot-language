@@ -199,15 +199,14 @@ class Delay(HootCallable):
 
     def call(self, interpreter, arguments, error_token: Token):
         async def sleeper():
-            await asyncio.sleep(arguments[1] / 1000)
+            await asyncio.sleep(arguments[0] / 1000)
             try:
-                arguments[0].call(interpreter, [], error_token)
+                arguments[1].call(interpreter, [], error_token)
             except Exception as err:
                 interpreter.hoot.error(
-                    error_token, f"Error in delay callback '{arguments[0]}'. Caught error: {err}")
+                    error_token, f"Error in delay callback '{arguments[1]}'. Caught error: {err}")
                 return False
         asyncio.create_task(sleeper())
-        return 0
 
     def __repr__(self):
         return "<native fn>"

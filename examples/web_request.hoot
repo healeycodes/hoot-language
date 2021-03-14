@@ -1,8 +1,8 @@
 fun print_headers(response) {
-    print response.get("headers"); // This is a map()
+    print response.headers; // This is a map()
 }
 
 // request params: url, data, headers, method, callback
-request("http://google.com", nil, nil, "GET", print_headers);
+request("https://google.com", nil, nil, "GET", print_headers);
 
-print "This message will print before print_headers runs!";
+print "This message will print before print_headers is called.";
