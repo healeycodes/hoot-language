@@ -10,7 +10,7 @@ Why? I wrote it to learn more about interpreters! It uses (mostly-typed) Python 
 
 Run the integration tests with `python test_hoot.py`. It should also pass `mypy .` with no issues.
 
-Run a program with `python hoot.py file.hoot`.
+Run a program with `python hoot.py ./file.hoot`.
 
 Open the REPL with `python hoot.py`.
 
