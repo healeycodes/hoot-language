@@ -1,14 +1,14 @@
-# hoot-lang
+# Hoot Lang
 
-Hoot is an implementation and extension of the [Lox](https://github.com/munificent/craftinginterpreters) Programming language.
+Hoot is a general-purpose, interpreted scripting language. It's dynamically typed, with classes, inheritance, and closures. It's an implementation and extension of the [Lox](https://github.com/munificent/craftinginterpreters) Programming language.
 
-It's a general-purpose, interpreted scripting language. It's dynamically typed, with classes, inheritance, and closures.
+Hoot extends Lox by introducing an event loop for non-blocking I/O, more complex types (string, list, map), and a small standard library (web requests, file reading/writing, delay functions).
 
-Hoot extends Lox by introducing an event loop for non-blocking I/O, more complex types (string, list, map), and a small standard library (web requests, file reading/writing, delay).
+I wrote it to learn more about interpreters! It uses Python 3.8 and no additional libraries.
 
 <br>
 
-Run the integration tests with `python test_hoot.py`. It should pass `mypy .` with no issues.
+Run the integration tests with `python test_hoot.py`. It should also pass `mypy .` with no issues.
 
 Run a program with `python hoot.py file.hoot`.
 
@@ -44,7 +44,7 @@ fun make_logger(time) {
 
 delay(make_logger(0), 0); // 0ms delay
 
-print "This message prints first because each task 'Runs-to-completion' ala JavaScript";
+print "This message prints first because each task 'Runs-to-completion' a la JavaScript";
 
 delay(make_logger(50), 50);
 delay(make_logger(100), 100);
@@ -110,7 +110,7 @@ let raw = "raw string";
 Types
 
 ```
-// string has `at(index)`, `alter(index, element)`, `length()` properties
+// string has `at(index)`, `alter(index, element)`, `length()`
 let some_text = string("Hello, World!");
 some_text.alter(12, "?");
 print some_text; // "Hello, World?"
@@ -181,6 +181,10 @@ BostonCream().cook();
 
 ## Standard library
 
+See `native.py` for implementation details.
+
+<br>
+
 `input(prompt)` — Returns standard input.
 
 `read(file_path, callback)` — reads a UTF-8 compatible file and passes it as the first argument to _callback_.
@@ -192,3 +196,10 @@ BostonCream().cook();
 `delay(milliseconds, callback)` — like setTimeout in JavaScript.
 
 `request(url, data, headers, http_method, callback)` — _callback_ is passed a response instance with the fields `body` and `header` which can be accessed via `.` dot.
+
+<br>
+
+
+## Licence
+
+MIT.
