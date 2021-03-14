@@ -57,7 +57,12 @@ class Hoot:
             line = input('> ')
             if len(line) == 0:
                 break
+            self.reset()
             self.run(line)
+
+    def reset(self):
+        self.had_error = False
+        self.had_runtime_error = False
 
     def report(self, line, where, message):
         print(f'[line {line}] Error{where}: {message}', file=sys.stderr)
