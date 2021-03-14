@@ -108,8 +108,8 @@ read("examples/test_file.txt", show_original_length);
 Variables
 
 ```
-let num = 0; // All numbers are floats
-let raw = "raw string";
+let num = 0; // All numbers are floats and support +, -, *, /
+let raw = "raw string"; // Strings support +
 ```
 
 <br>
