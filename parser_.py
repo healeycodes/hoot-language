@@ -1,3 +1,4 @@
+from native import StringInstance
 from hoot import Hoot
 from typing import List
 from error import ParseError

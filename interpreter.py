@@ -6,6 +6,7 @@ from environment import Environment
 from callable import HootClass, HootFunction, HootInstance, ReturnBubble
 from expr import Assign, Binary, Call, Expr, ExprVisitor, Grouping, Literal, Logical, Set, Super, This, Unary, Letiable
 from stmt import Block, Expression, Let, Print, Return, Stmt, While, Break
+from native import Clock, Delay, StringInstance, StringDataType, ListDataType, MapDataType, Request, Input, Write, Read
 
 
 class Interpreter(ExprVisitor):
@@ -15,20 +16,15 @@ class Interpreter(ExprVisitor):
         self.environment = self.globals
         self.locals: Dict[Expr, int] = {}
 
-        from native import Clock, Delay, Import, ListDataType, MapDataType, Request, Input, Write, Read
-
         self.globals.define('input', Input())
         self.globals.define('read', Read())
         self.globals.define('write', Write())
         self.globals.define('clock', Clock())
         self.globals.define('delay', Delay())
         self.globals.define('request', Request())
+        self.globals.define('string', StringDataType())
         self.globals.define('list', ListDataType())
         self.globals.define('map', MapDataType())
-
-        self.globals.define('import', Import())
-        exports = HootClass('exports', None, {})
-        self.globals.define('exports', HootInstance(exports))
 
     def interpret(self, statements: List[Stmt]):
         async def main():
@@ -57,6 +53,7 @@ class Interpreter(ExprVisitor):
         run_main_coro = run_main()
         run_main_task = loop.create_task(run_main_coro)
         loop.run_until_complete(run_main_task)
+        loop.close()
 
     def visit_literal_expr(self, expr: Literal):
         return expr.value
@@ -217,6 +214,12 @@ class Interpreter(ExprVisitor):
             if type(left) == str and type(right) == str \
                     or type(left) == float and type(right) == float:
                 return left + right
+            if type(left) == StringInstance and type(right) == StringInstance:
+                return StringInstance(''.join(left.elements) + ''.join(right.elements), expr.operator)
+            if type(left) == str and type(right) == StringInstance:
+                return StringInstance(left + ''.join(right.elements), expr.operator)
+            if type(left) == StringInstance and type(right) == str:
+                return StringInstance(''.join(left.elements) + right, expr.operator)
             raise RuntimeError(
                 expr.operator, "Operands must be two numbers or two strings.")
         elif expr.operator.type_ == TokenType.GREATER:

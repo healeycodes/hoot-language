@@ -1,0 +1,16 @@
+fun bubble_sort(numbers) {
+    for (let i = 0; i < numbers.length() - 1; i = i + 1) {
+        for (let j = 0; j < numbers.length() - 1; j = j + 1) {
+            if (numbers.at(j) > numbers.at(j + 1)) {
+                let tmp = numbers.at(j);
+                numbers.alter(j, numbers.at(j + 1));
+                numbers.alter(j + 1, tmp);
+            }
+        }
+    }
+    return numbers;
+}
+
+
+let unordered_numbers = list(1, -1, 0.5, 12, 2);
+print bubble_sort(unordered_numbers);

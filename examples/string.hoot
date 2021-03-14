@@ -1,0 +1,5 @@
+let some_text = string("Hello, World!");
+
+some_text.alter(12, "?"); // string has 'at' and 'alter' like the list type
+
+print some_text; // "Hello, World?"

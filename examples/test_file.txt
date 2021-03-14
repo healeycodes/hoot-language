@@ -1,0 +1,2 @@
+Some text to be read by read()
+More textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore textMore text

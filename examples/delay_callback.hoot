@@ -1,0 +1,13 @@
+fun make_logger(time) {
+    fun logger () {
+        print string(time) + "ms";
+    }
+    return logger;
+}
+
+delay(make_logger(0), 0); // 0ms delay
+
+print "This message prints first because each task 'Runs-to-completion' ala JavaScript";
+
+delay(make_logger(50), 50);
+delay(make_logger(100), 100);

@@ -1,0 +1,16 @@
+// Read a file, print the length, write to it, then print the new length
+
+fun show_length(text) {
+    print "File length: " + string(text.length());
+}
+
+fun show_original_length(text) {
+    print "File length: " + string(text.length());
+    
+    fun callback() {
+        read("examples/test_file.txt", show_length);
+    }
+    write("examples/test_file.txt", "a", "More text", callback);
+}
+
+read("examples/test_file.txt", show_original_length);

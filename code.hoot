@@ -1,8 +1,7 @@
-
 fun print_headers(response) {
     print response.headers;
 }
 
-request("http://google.com", nil, nil, "GET", print_headers);
+delay(print_headers, 500);
 
 print "This message will print before the headers!";
