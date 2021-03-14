@@ -1,10 +1,10 @@
-# The Hoot Language Programming Language
+# Hoot Lang
 
 Hoot is a general-purpose, interpreted scripting language. It's dynamically typed, with classes, inheritance, and closures. It's an implementation and extension of the [Lox](https://github.com/munificent/craftinginterpreters) Programming language.
 
 Hoot extends Lox by introducing an event loop for non-blocking I/O, more complex types (string, list, map), and a small standard library (web requests, file reading/writing, delay functions).
 
-I wrote it to learn more about interpreters.
+I wrote it to learn more about interpreters! It uses Python 3.8 and no additional libraries.
 
 <br>
 
