@@ -171,6 +171,9 @@ Classes
 ```
 // Lifted this example straight from chapter 13 of Crafting Interpreters
 class Doughnut {
+  init() {
+    this.ending_mark = "!";
+  }
   cook() {
     print "Fry until golden brown.";
   }
@@ -179,7 +182,7 @@ class Doughnut {
 class BostonCream < Doughnut {
   cook() {
     super.cook();
-    print "Pipe full of custard and coat with chocolate.";
+    print "Pipe full of custard and coat with chocolate" + this.ending_mark;
   }
 }
 
