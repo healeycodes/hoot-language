@@ -27,7 +27,7 @@ Open the REPL with `python hoot.py`.
 
 ## Example programs
 
-Printing the headers from a HTTP response.
+Print the headers from a HTTP response.
 
 ```
 fun print_headers(response) {
@@ -41,7 +41,7 @@ print "This message will print before print_headers is called.";
 
 <br>
 
-Delaying a function.
+Delay a function.
 
 ```
 fun make_logger(time) {
