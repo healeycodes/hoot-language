@@ -19,7 +19,7 @@ Open the REPL with `python hoot.py`.
 * [Example programs](#example-programs)
 * [Language reference](#language-reference)
 * [Standard library](#standard-library)
-* [Licence](#licence)
+* [License](#license)
 
 <br>
 
@@ -206,6 +206,6 @@ See `native.py` for implementation details.
 
 <br>
 
-## Licence
+## License
 
 MIT.
