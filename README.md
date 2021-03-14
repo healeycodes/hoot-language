@@ -110,8 +110,11 @@ read("examples/test_file.txt", show_original_length);
 Variables
 
 ```
-let num = 0; // All numbers are floats and support +, -, *, /
-let raw = "raw string"; // Strings support +
+let bool = true; // or `false`
+let num = 0; // All numbers are floats and support `+`, `-`, `*`, `/`
+let raw = "raw string"; // Strings support `+`
+
+// Compare with `==`
 ```
 
 <br>
